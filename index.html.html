@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gusvandi Harki - Portofolio Interaktif & CV</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#1e1b4b',
+                            accent: '#06b6d4',
+                            gold: '#f59e0b'
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-12px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px -10px rgba(99, 102, 241, 0.25);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #818cf8 0%, #38bdf8 50%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4f46e5;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- HEADER NAVIGATION -->
+    <header class="fixed top-0 left-0 right-0 z-50 px-4 py-3 transition-all duration-300" id="main-header">
+        <div class="max-w-7xl mx-auto">
+            <nav class="glass-panel rounded-2xl px-6 py-3 flex items-center justify-between shadow-2xl">
+                <!-- Brand Logo -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-brand-accent flex items-center justify-center font-extrabold text-white text-lg shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform">
+                        GH
+                    </div>
+                    <div>
+                        <span class="font-bold text-lg tracking-tight block text-white group-hover:text-brand-accent transition-colors">Gusvandi Harki</span>
+                        <span class="text-xs text-gray-400 block -mt-1">Communication & Digital Media</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <div class="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-medium">
+                    <a href="#about" class="px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-all">Tentang</a>
+                    <a href="#experience" class="px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-all">Pengalaman</a>
+                    <a href="#portfolio" class="px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-all">Portofolio</a>
+                    <a href="#gallery" class="px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-all">Galeri Foto</a>
+                    <a href="#achievements" class="px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-all">Prestasi</a>
+                    <a href="#organization" class="px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-all">Organisasi & MC</a>
+                    <a href="#cv" class="px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-all">CV</a>
+                </div>
+
+                <!-- Right Action Buttons -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <button onclick="openContactModal()" class="px-4 py-2 text-xs font-semibold rounded-xl bg-gradient-to-r from-brand-600 to-brand-accent text-white hover:opacity-90 transition-all shadow-lg shadow-brand-500/20 flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Hubungi Saya
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </nav>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden max-w-7xl mx-auto mt-2 px-2">
+            <div class="glass-panel rounded-2xl p-4 flex flex-col space-y-2 text-sm font-medium border border-white/10 shadow-2xl">
+                <a href="#about" class="px-4 py-2.5 rounded-xl text-gray-300 hover:bg-brand-600/20 hover:text-white transition-all">Tentang</a>
+                <a href="#experience" class="px-4 py-2.5 rounded-xl text-gray-300 hover:bg-brand-600/20 hover:text-white transition-all">Pengalaman</a>
+                <a href="#portfolio" class="px-4 py-2.5 rounded-xl text-gray-300 hover:bg-brand-600/20 hover:text-white transition-all">Portofolio Kreatif</a>
+                <a href="#gallery" class="px-4 py-2.5 rounded-xl text-gray-300 hover:bg-brand-600/20 hover:text-white transition-all">Galeri Foto Kegiatan</a>
+                <a href="#achievements" class="px-4 py-2.5 rounded-xl text-gray-300 hover:bg-brand-600/20 hover:text-white transition-all">Prestasi & Penghargaan</a>
+                <a href="#organization" class="px-4 py-2.5 rounded-xl text-gray-300 hover:bg-brand-600/20 hover:text-white transition-all">Organisasi & MC</a>
+                <a href="#cv" class="px-4 py-2.5 rounded-xl text-gray-300 hover:bg-brand-600/20 hover:text-white transition-all">Dokumen CV</a>
+                <button onclick="openContactModal()" class="w-full mt-2 py-3 text-center text-xs font-semibold rounded-xl bg-gradient-to-r from-brand-600 to-brand-accent text-white shadow-lg">
+                    Hubungi Saya
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden min-h-screen flex items-center">
+        <!-- Ambient Glowing Background Elements -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-600/20 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[350px] h-[350px] bg-brand-accent/15 rounded-full blur-[100px] pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Column: Intro Text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <!-- Winner Badge -->
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-card border-amber-500/30 text-xs font-semibold text-amber-300 animate-pulse-slow">
+                        <i class="fa-solid fa-crown text-amber-400"></i>
+                        <span>Winner Putera Kampus Jawa Barat 2025</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        Halo, Saya <br class="hidden sm:inline">
+                        <span class="gradient-text">Gusvandi Harki</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-gray-300 max-w-2xl font-light leading-relaxed">
+                        <strong class="text-white font-medium">Fresh Graduate Komunikasi Digital dan Media IPB University</strong>.
+                        Spesialis dalam <span class="text-brand-accent font-medium">Video Editing</span>, <span class="text-brand-accent font-medium">Event Management</span>, <span class="text-brand-accent font-medium">Content Creation</span>, & <span class="text-brand-accent font-medium">Broadcasting</span>.
+                    </p>
+
+                    <!-- Quick Highlights Badges -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-2 pt-2">
+                        <span class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300"><i class="fa-solid fa-graduation-cap text-brand-500 mr-1.5"></i> IPB IPK 3.40/4.00</span>
+                        <span class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300"><i class="fa-solid fa-building text-brand-500 mr-1.5"></i> Ex-Intern PLN Icon Plus & BTV</span>
+                        <span class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300"><i class="fa-solid fa-microphone text-brand-500 mr-1.5"></i> News Anchor & Public Speaker</span>
+                    </div>
+
+                    <!-- Call To Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#portfolio" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-brand-600 to-brand-accent text-white font-semibold text-sm shadow-xl shadow-brand-600/30 hover:shadow-brand-600/50 hover:scale-[1.02] active:scale-95 transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-photo-film"></i> Eksplor Portofolio
+                        </a>
+                        <a href="#cv" class="w-full sm:w-auto px-7 py-3.5 rounded-xl glass-card text-white font-semibold text-sm hover:bg-white/10 hover:scale-[1.02] active:scale-95 transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-file-pdf text-rose-400"></i> Lihat CV Lengkap
+                        </a>
+                    </div>
+
+                    <!-- Social Media Links Bar -->
+                    <div class="pt-6 flex items-center justify-center lg:justify-start gap-4 text-gray-400">
+                        <span class="text-xs uppercase tracking-wider font-semibold text-gray-500">Koneksi:</span>
+                        <a href="https://instagram.com/gusvandiharki" target="_blank" rel="noopener" class="w-9 h-9 rounded-full glass-card flex items-center justify-center text-gray-300 hover:text-pink-400 hover:border-pink-500/50 transition-all" title="Instagram @gusvandiharki">
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/gusvandiharki" target="_blank" rel="noopener" class="w-9 h-9 rounded-full glass-card flex items-center justify-center text-gray-300 hover:text-sky-400 hover:border-sky-500/50 transition-all" title="LinkedIn Gusvandi Harki">
+                            <i class="fa-brands fa-linkedin-in text-lg"></i>
+                        </a>
+                        <a href="mailto:gusvandiharki6@gmail.com" class="w-9 h-9 rounded-full glass-card flex items-center justify-center text-gray-300 hover:text-rose-400 hover:border-rose-500/50 transition-all" title="Email Gusvandi">
+                            <i class="fa-solid fa-envelope text-lg"></i>
+                        </a>
+                        <a href="https://wa.me/6282284673727" target="_blank" rel="noopener" class="w-9 h-9 rounded-full glass-card flex items-center justify-center text-gray-300 hover:text-emerald-400 hover:border-emerald-500/50 transition-all" title="WhatsApp">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Column: Profile Card Visual Mockup -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md">
+                        <!-- Card Frame -->
+                        <div class="glass-card rounded-3xl p-6 relative z-10 border border-white/10 shadow-2xl">
+                            <div class="relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900 group">
+                                <img src="DSC00713.jpg" alt="Gusvandi Harki Profile" onerror="this.onerror=null; this.src='https://placehold.co/600x750/1e1b4b/38bdf8?text=Gusvandi+Harki';" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
+                                
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                                
+                                <div class="absolute bottom-5 left-5 right-5 space-y-1">
+                                    <div class="inline-block px-2.5 py-1 rounded-md bg-brand-600/80 backdrop-blur-md text-[10px] font-bold text-white uppercase tracking-wider">
+                                        Creative & Digital Broadcaster
+                                    </div>
+                                    <h3 class="text-xl font-bold text-white">Gusvandi Harki</h3>
+                                    <p class="text-xs text-gray-300"><i class="fa-solid fa-location-dot text-rose-400 mr-1"></i> Bogor & Jakarta, Indonesia</p>
+                                </div>
+                            </div>
+
+                            <!-- Interactive Stat Strip -->
+                            <div class="grid grid-cols-3 gap-2 mt-4 text-center">
+                                <div class="p-2.5 rounded-xl bg-white/5 border border-white/5">
+                                    <span class="block text-lg font-bold text-brand-accent">3.40</span>
+                                    <span class="text-[10px] text-gray-400 uppercase font-medium">IPK IPB</span>
+                                </div>
+                                <div class="p-2.5 rounded-xl bg-white/5 border border-white/5">
+                                    <span class="block text-lg font-bold text-amber-400">10+</span>
+                                    <span class="text-[10px] text-gray-400 uppercase font-medium">Prestasi</span>
+                                </div>
+                                <div class="p-2.5 rounded-xl bg-white/5 border border-white/5">
+                                    <span class="block text-lg font-bold text-indigo-400">15+</span>
+                                    <span class="text-[10px] text-gray-400 uppercase font-medium">Project & MC</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Decorative Floating Badges -->
+                        <div class="absolute -bottom-6 -left-6 z-20 glass-panel p-3.5 rounded-2xl shadow-2xl animate-float border border-white/15 hidden sm:flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-clapperboard"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-white">Show Director</p>
+                                <p class="text-[10px] text-gray-400">Wonderlense EO</p>
+                            </div>
+                        </div>
+
+                        <div class="absolute -top-6 -right-6 z-20 glass-panel p-3.5 rounded-2xl shadow-2xl animate-float border border-white/15 hidden sm:flex items-center gap-3" style="animation-delay: 2s;">
+                            <div class="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-newspaper"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-white">BTV & PLN Icon+</p>
+                                <p class="text-[10px] text-gray-400">Social Media Intern</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-brand-accent font-semibold text-xs uppercase tracking-widest">Profil Profesional</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">Tentang Gusvandi Harki</h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-brand-600 to-brand-accent mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                <!-- Summary Card -->
+                <div class="lg:col-span-7 glass-card rounded-3xl p-8 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="p-3 rounded-2xl bg-brand-600/20 text-brand-400">
+                                <i class="fa-solid fa-user-gear text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Komunikasi Digital & Media</h3>
+                                <p class="text-xs text-gray-400">Sekolah Vokasi IPB University</p>
+                            </div>
+                        </div>
+
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Saya adalah Fresh Graduate Program Studi <strong class="text-white">Komunikasi Digital dan Media IPB University</strong>. Selama perkuliahan, saya aktif mengembangkan keahlian praktis dalam video editing, manajemen acara (event management), pemasaran digital, pembuatan konten audio-visual, jurnalisme, penyiaran (broadcasting), serta penulisan kreatif.
+                        </p>
+                        
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Memiliki pengalaman nyata dalam berbagai peran strategis saat magang di B-Universe (Beritasatu) dan PT Indonesia Comnets Plus (PLN Icon Plus), serta puluhan kepanitiaan dan proyek independen. Dikenal memiliki kemampuan komunikasi publik yang kuat, kepemimpinan organisasi, kerja sama tim, dan manajemen waktu yang presisi.
+                        </p>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <span class="text-xs text-gray-400 block">Pendidikan</span>
+                            <span class="text-sm font-semibold text-white">SV IPB University</span>
+                        </div>
+                        <div>
+                            <span class="text-xs text-gray-400 block">IPK Akhir</span>
+                            <span class="text-sm font-semibold text-emerald-400">3.40 / 4.00</span>
+                        </div>
+                        <div>
+                            <span class="text-xs text-gray-400 block">Bahasa</span>
+                            <span class="text-sm font-semibold text-white">Indonesian & English</span>
+                        </div>
+                        <div>
+                            <span class="text-xs text-gray-400 block">Domisili</span>
+                            <span class="text-sm font-semibold text-white">Bogor & Jakarta</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Grid & Radar Focus -->
+                <div class="lg:col-span-5 glass-card rounded-3xl p-8 space-y-6">
+                    <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i> Keahlian Utama
+                    </h3>
+
+                    <div class="space-y-4">
+                        <!-- Skill Item -->
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span class="text-gray-200">Video Editing (Reels, TikTok, Shorts)</span>
+                                <span class="text-brand-accent">95%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-brand-600 to-brand-accent h-full rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill Item -->
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span class="text-gray-200">Event Management & Show Directing</span>
+                                <span class="text-brand-accent">92%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-brand-600 to-brand-accent h-full rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill Item -->
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span class="text-gray-200">Public Speaking, MC & News Anchoring</span>
+                                <span class="text-brand-accent">90%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-brand-600 to-brand-accent h-full rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill Item -->
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span class="text-gray-200">Content Creation & Social Media Strategy</span>
+                                <span class="text-brand-accent">88%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-brand-600 to-brand-accent h-full rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill Item -->
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span class="text-gray-200">Creative Scriptwriting & Journalistic Article</span>
+                                <span class="text-brand-accent">85%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-brand-600 to-brand-accent h-full rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools Badge Cloud -->
+                    <div class="pt-4 border-t border-white/10">
+                        <span class="text-xs text-gray-400 block mb-2 font-medium">Software & Tools Mastered:</span>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-[11px] text-gray-300"><i class="fa-solid fa-video text-rose-400 mr-1"></i> Premiere Pro</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-[11px] text-gray-300"><i class="fa-solid fa-scissors text-amber-400 mr-1"></i> CapCut Pro</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-[11px] text-gray-300"><i class="fa-solid fa-camera text-emerald-400 mr-1"></i> DSLR/Mirrorless</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-[11px] text-gray-300"><i class="fa-solid fa-microphone-lines text-indigo-400 mr-1"></i> Podcast & Audio Setup</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="py-20 relative bg-slate-950/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-brand-accent font-semibold text-xs uppercase tracking-widest">Rekam Jejak Karir</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">Pengalaman Kerja & Magang</h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-brand-600 to-brand-accent mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Timeline Items Container -->
+            <div class="space-y-8 relative before:absolute before:inset-0 before:left-4 sm:before:left-1/2 before:-ml-px before:w-0.5 before:bg-gradient-to-b before:from-brand-600 before:via-brand-accent before:to-transparent">
+                
+                <!-- Experience Item 1: PLN Icon Plus -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-9 h-9 rounded-full border-2 border-brand-500 bg-slate-900 text-brand-400 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg shadow-brand-500/50 z-10">
+                        <i class="fa-solid fa-bolt text-xs"></i>
+                    </div>
+                    <div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] glass-card p-6 rounded-2xl border border-white/10 shadow-xl">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-300 text-[11px] font-bold uppercase tracking-wide">Agustus 2025 - Desember 2025</span>
+                            <span class="text-xs text-gray-400"><i class="fa-solid fa-location-dot mr-1"></i> Jakarta</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">PT. Indonesia Comnets Plus (PLN Icon Plus)</h3>
+                        <p class="text-xs font-semibold text-brand-accent mb-3">Komunikasi Korporat & TJSL Intern</p>
+                        <ul class="text-xs text-gray-300 space-y-2 list-disc list-inside">
+                            <li>Memproduksi konten foto/video internal & eksternal untuk Instagram PLN Icon Plus.</li>
+                            <li>Mengedit konten audio-visual Reels untuk kebutuhan branding korporat.</li>
+                            <li>Melakukan pemantauan (monitoring) media sosial dan pemberitaan media nasional.</li>
+                            <li>Merancang konsep video TJSL untuk ajang <strong>CID Award 2025</strong>.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2: B-Universe (Beritasatu) -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-9 h-9 rounded-full border-2 border-brand-accent bg-slate-900 text-brand-accent shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg shadow-brand-accent/50 z-10">
+                        <i class="fa-solid fa-tv text-xs"></i>
+                    </div>
+                    <div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] glass-card p-6 rounded-2xl border border-white/10 shadow-xl">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="px-2.5 py-1 rounded-md bg-sky-500/20 text-sky-300 text-[11px] font-bold uppercase tracking-wide">Februari 2025 - Juni 2025</span>
+                            <span class="text-xs text-gray-400"><i class="fa-solid fa-location-dot mr-1"></i> Jakarta</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">B-Universe (Beritasatu)</h3>
+                        <p class="text-xs font-semibold text-brand-accent mb-3">Social Media Intern</p>
+                        <ul class="text-xs text-gray-300 space-y-2 list-disc list-inside">
+                            <li>Membuat konten harian Instagram BTV untuk promosi program acara stasiun televisi.</li>
+                            <li>Melakukan riset konten, penyusunan script, pengambilan gambar, dan liputan online.</li>
+                            <li>Mengelola unggahan YouTube Shorts Beritasatu dan caption informatif.</li>
+                            <li>Terlibat dalam tim dokumentasi perusahaan & editing Feeds/Reels.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 3: Freelance Talent & Photographer -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-9 h-9 rounded-full border-2 border-amber-400 bg-slate-900 text-amber-400 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg shadow-amber-400/50 z-10">
+                        <i class="fa-solid fa-camera text-xs"></i>
+                    </div>
+                    <div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] glass-card p-6 rounded-2xl border border-white/10 shadow-xl">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="px-2.5 py-1 rounded-md bg-amber-500/20 text-amber-300 text-[11px] font-bold uppercase tracking-wide">Januari 2024 - Januari 2025</span>
+                            <span class="text-xs text-gray-400"><i class="fa-solid fa-location-dot mr-1"></i> Bogor & Jakarta</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Freelance Creative Talent & Photographer</h3>
+                        <p class="text-xs font-semibold text-amber-300 mb-3">Peruri.id, Klinik Riyena, Art Mission</p>
+                        <ul class="text-xs text-gray-300 space-y-2 list-disc list-inside">
+                            <li><strong>Talent Peruri.id:</strong> Penelaahan naskah iklan & talent shooting.</li>
+                            <li><strong>Talent Klinik Riyena:</strong> Merancang konsep ulasan, penulisan script, editing video, dan caption.</li>
+                            <li><strong>Fotografer Art Mission:</strong> Dokumentasi foto profesional event Cibubur.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                <span class="text-brand-accent font-semibold text-xs uppercase tracking-widest">Karya & Proyek</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">Portofolio Editing Video Interaktif</h2>
+                <p class="text-gray-400 text-sm">Gunakan filter di bawah untuk melihat hasil karya editing video Instagram Reels, TV Promo, dan YouTube Music Video.</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-brand-600 to-brand-accent mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10" id="portfolio-tabs">
+                <button onclick="filterPortfolio('all')" class="tab-btn px-5 py-2.5 rounded-xl text-xs font-semibold glass-card border border-brand-500 bg-brand-600 text-white shadow-lg transition-all" data-category="all">
+                    Semua Karya
+                </button>
+                <button onclick="filterPortfolio('pln')" class="tab-btn px-5 py-2.5 rounded-xl text-xs font-semibold glass-card text-gray-300 hover:text-white hover:bg-white/10 transition-all" data-category="pln">
+                    <i class="fa-solid fa-bolt text-emerald-400 mr-1.5"></i> PLN Icon Plus
+                </button>
+                <button onclick="filterPortfolio('btv')" class="tab-btn px-5 py-2.5 rounded-xl text-xs font-semibold glass-card text-gray-300 hover:text-white hover:bg-white/10 transition-all" data-category="btv">
+                    <i class="fa-solid fa-tv text-sky-400 mr-1.5"></i> BTV / B-Universe
+                </button>
+                <button onclick="filterPortfolio('mv')" class="tab-btn px-5 py-2.5 rounded-xl text-xs font-semibold glass-card text-gray-300 hover:text-white hover:bg-white/10 transition-all" data-category="mv">
+                    <i class="fa-brands fa-youtube text-rose-400 mr-1.5"></i> YouTube MV
+                </button>
+            </div>
+
+            <!-- Portfolio Items Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid">
+                
+                <!-- Portfolio Card 1: PLN Reel 1 -->
+                <div class="portfolio-card glass-card rounded-2xl overflow-hidden group border border-white/10 flex flex-col justify-between" data-category="pln">
+                    <div>
+                        <div class="p-5 space-y-2">
+                            <span class="px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-300 text-[10px] font-bold uppercase">Instagram Reel 01</span>
+                            <h3 class="text-base font-bold text-white group-hover:text-brand-accent transition-colors">Event Highlights & Corporate Action</h3>
+                            <p class="text-xs text-gray-400">Pengeditan video liputan event resmi PLN Icon Plus dengan potongan ritmis, penataan audio, dan motion graphics.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 flex justify-between items-center text-xs">
+                        <span class="text-gray-500 font-medium">PLN Icon Plus</span>
+                        <a href="https://www.instagram.com/reel/DQ_Tb4kEcr3/?igsi=NnU3eXUwMjc5M3R1" target="_blank" rel="noopener" class="text-brand-accent hover:underline font-semibold">
+                            Tonton di IG <i class="fa-brands fa-instagram ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Portfolio Card 2: PLN Reel 2 -->
+                <div class="portfolio-card glass-card rounded-2xl overflow-hidden group border border-white/10 flex flex-col justify-between" data-category="pln">
+                    <div>
+                        <div class="p-5 space-y-2">
+                            <span class="px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-300 text-[10px] font-bold uppercase">Instagram Reel 02</span>
+                            <h3 class="text-base font-bold text-white group-hover:text-brand-accent transition-colors">Branding & Media Engagement</h3>
+                            <p class="text-xs text-gray-400">Video promosi produk & pemantauan citra perusahaan yang disesuaikan dengan standar visual korporat.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 flex justify-between items-center text-xs">
+                        <span class="text-gray-500 font-medium">PLN Icon Plus</span>
+                        <a href="https://www.instagram.com/reel/DPY4kzEkcHf/?igsi=c2FiZGtzemt5YjFx" target="_blank" rel="noopener" class="text-brand-accent hover:underline font-semibold">
+                            Tonton di IG <i class="fa-brands fa-instagram ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Portfolio Card 3: PLN Reel 3 -->
+                <div class="portfolio-card glass-card rounded-2xl overflow-hidden group border border-white/10 flex flex-col justify-between" data-category="pln">
+                    <div>
+                        <div class="p-5 space-y-2">
+                            <span class="px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-300 text-[10px] font-bold uppercase">Instagram Reel 03</span>
+                            <h3 class="text-base font-bold text-white group-hover:text-brand-accent transition-colors">TJSL Program & CID Awarding</h3>
+                            <p class="text-xs text-gray-400">Pengemasan cerita visual (storytelling) mengenai program Tanggung Jawab Sosial dan Lingkungan perusahaan.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 flex justify-between items-center text-xs">
+                        <span class="text-gray-500 font-medium">PLN Icon Plus</span>
+                        <a href="https://www.instagram.com/reel/DRYu76uETBQ/?igsi=MTk5cjA1cDRzMDRyNg==" target="_blank" rel="noopener" class="text-brand-accent hover:underline font-semibold">
+                            Tonton di IG <i class="fa-brands fa-instagram ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Portfolio Card 4: BTV Reel 1 -->
+                <div class="portfolio-card glass-card rounded-2xl overflow-hidden group border border-white/10 flex flex-col justify-between" data-category="btv">
+                    <div>
+                        <div class="p-5 space-y-2">
+                            <span class="px-2.5 py-1 rounded-md bg-sky-500/20 text-sky-300 text-[10px] font-bold uppercase">Semesta Berpesta Part 01</span>
+                            <h3 class="text-base font-bold text-white group-hover:text-brand-accent transition-colors">Teaser Event & Guest Star Promo</h3>
+                            <p class="text-xs text-gray-400">Video promo cepat untuk memicu ketertarikan audiens menonton acara festival musik Semesta Berpesta.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 flex justify-between items-center text-xs">
+                        <span class="text-gray-500 font-medium">BTV / B-Universe</span>
+                        <a href="https://www.instagram.com/reel/DIvLdO5tNOq/?igsi=Zjh3dnR4a3N3d3li" target="_blank" rel="noopener" class="text-brand-accent hover:underline font-semibold">
+                            Tonton di IG <i class="fa-brands fa-instagram ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Portfolio Card 5: BTV Reel 2 -->
+                <div class="portfolio-card glass-card rounded-2xl overflow-hidden group border border-white/10 flex flex-col justify-between" data-category="btv">
+                    <div>
+                        <div class="p-5 space-y-2">
+                            <span class="px-2.5 py-1 rounded-md bg-sky-500/20 text-sky-300 text-[10px] font-bold uppercase">Semesta Berpesta Part 02</span>
+                            <h3 class="text-base font-bold text-white group-hover:text-brand-accent transition-colors">Behind The Scene & On-Air Hype</h3>
+                            <p class="text-xs text-gray-400">Pengemasan keseruan acara festival, sorotan penonton, serta penataan teks overlay informatif.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 flex justify-between items-center text-xs">
+                        <span class="text-gray-500 font-medium">BTV / B-Universe</span>
+                        <a href="https://www.instagram.com/reel/DJ86OvLBwd4/?igsi=ZnU1MzR3ZGlqMnh5" target="_blank" rel="noopener" class="text-brand-accent hover:underline font-semibold">
+                            Tonton di IG <i class="fa-brands fa-instagram ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Portfolio Card 6: BTV Reel 3 -->
+                <div class="portfolio-card glass-card rounded-2xl overflow-hidden group border border-white/10 flex flex-col justify-between" data-category="btv">
+                    <div>
+                        <div class="p-5 space-y-2">
+                            <span class="px-2.5 py-1 rounded-md bg-sky-500/20 text-sky-300 text-[10px] font-bold uppercase">Semesta Berpesta Part 03</span>
+                            <h3 class="text-base font-bold text-white group-hover:text-brand-accent transition-colors">Event Highlights Recap</h3>
+                            <p class="text-xs text-gray-400">Rangkuman momen-momen terbaik festival musik BTV dengan penyuntingan transisi audio-visual yang dinamis.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 flex justify-between items-center text-xs">
+                        <span class="text-gray-500 font-medium">BTV / B-Universe</span>
+                        <a href="https://www.instagram.com/reel/DKQ-PSwurmB/?igsi=MThtbzc0N3ppa3V2eA==" target="_blank" rel="noopener" class="text-brand-accent hover:underline font-semibold">
+                            Tonton di IG <i class="fa-brands fa-instagram ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Portfolio Card 7: YouTube MV Remaja HIVI -->
+                <div class="portfolio-card glass-card rounded-2xl overflow-hidden group border border-white/10 flex flex-col justify-between md:col-span-2 lg:col-span-3" data-category="mv">
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center p-5">
+                        <div class="md:col-span-5 rounded-xl overflow-hidden aspect-video bg-slate-900 relative">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/MJQQnlY46E4" title="HIVI - REMAJA MV" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="md:col-span-7 space-y-3">
+                            <span class="px-2.5 py-1 rounded-md bg-rose-500/20 text-rose-300 text-[10px] font-bold uppercase">Official YouTube Project</span>
+                            <h3 class="text-xl font-bold text-white">Music Video "Remaja - HIVI!" (Kelompok 2 EAV D2)</h3>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                Proyek pembuatan ulang video klip lagu legendaris "Remaja" karya HIVI!. Pada proyek ini, Gusvandi Harki berperan aktif sebagai <strong class="text-white">Talent Utama</strong> serta terlibat dalam konseptualisasi alur cerita, blocking kamera, dan sinkronisasi adegan musik.
+                            </p>
+                            <div>
+                                <a href="https://youtu.be/MJQQnlY46E4?si=dC6RIMDd3p6s9ctU" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-rose-600 text-white font-semibold text-xs shadow-lg hover:bg-rose-500 transition-all">
+                                    <i class="fa-brands fa-youtube"></i> Tonton di YouTube
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERI FOTO KEGIATAN -->
+    <section id="gallery" class="py-20 relative bg-slate-950/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-brand-accent font-semibold text-xs uppercase tracking-widest">Dokumentasi Visual</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">Galeri Foto Kegiatan</h2>
+                <p class="text-gray-400 text-sm">Klik foto untuk melihat gambaran detail dokumentasi kegiatan Public Speaking, Moderasi, Shooting Talent, dan Event Kebudayaan.</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-brand-600 to-brand-accent mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Foto 1 -->
+                <div class="glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openMediaModal('Exploring IPB 2025', 'Pembukaan Sesi Talkshow Alumni Inspiratif Payakumbuh & 50 Kota.', 'WhatsApp Image 2026-08-20 at 07.45.00.jpeg')">
+                    <div class="relative overflow-hidden aspect-[3/4] bg-slate-900">
+                        <img src="WhatsApp Image 2026-08-20 at 07.45.00.jpeg" alt="Exploring IPB 2025" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="px-2.5 py-1 rounded bg-sky-500/80 text-[10px] font-bold text-white uppercase tracking-wider">Public Speaking</span>
+                            <h4 class="text-base font-bold text-white mt-1">Exploring IPB 2025</h4>
+                            <p class="text-xs text-gray-300">Pembukaan Sesi Talkshow Alumni Inspiratif</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 2 -->
+                <div class="glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openMediaModal('Uda Uni On Duty', 'MC Buko Puaso Silaturrahmi Keluarga Besar PAPMM - IPMM - Dosen Minang IPB.', 'WhatsApp Image 2026-08-20 at 07.45.01 (2).jpeg')">
+                    <div class="relative overflow-hidden aspect-[3/4] bg-slate-900">
+                        <img src="WhatsApp Image 2026-08-20 at 07.45.01 (2).jpeg" alt="MC Buko Puaso IPMM" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="px-2.5 py-1 rounded bg-amber-500/80 text-[10px] font-bold text-white uppercase tracking-wider">Master of Ceremony</span>
+                            <h4 class="text-base font-bold text-white mt-1">Uda Uni On Duty</h4>
+                            <p class="text-xs text-gray-300">MC Buko Puaso Silaturrahmi IPMM & Dosen</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 3 -->
+                <div class="glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openMediaModal('MV Remaja - HIVI!', 'Pemeran Utama Projek Sinematik Praktikum Penyiaran Komunikasi Digital IPB.', 'WhatsApp Image 2026-08-20 at 07.45.01 (1).jpeg')">
+                    <div class="relative overflow-hidden aspect-[3/4] bg-slate-900">
+                        <img src="WhatsApp Image 2026-08-20 at 07.45.01 (1).jpeg" alt="Talent MV Remaja HIVI" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="px-2.5 py-1 rounded bg-rose-500/80 text-[10px] font-bold text-white uppercase tracking-wider">Video Talent</span>
+                            <h4 class="text-base font-bold text-white mt-1">MV Remaja - HIVI!</h4>
+                            <p class="text-xs text-gray-300">Pemeran Utama Projek Sinematik Penyiaran</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 4 -->
+                <div class="glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openMediaModal('Prestasi IPMM Bogor', 'Juara 1 Stand Kebudayaan & Stand Favorit Gebyar Nusantara IPB 2024.', 'WhatsApp Image 2026-08-20 at 07.45.01 (3).jpg')">
+                    <div class="relative overflow-hidden aspect-[3/4] bg-slate-900">
+                        <img src="WhatsApp Image 2026-08-20 at 07.45.01 (3).jpg" alt="Juara 1 Stand Kebudayaan IPB" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="px-2.5 py-1 rounded bg-amber-500/80 text-[10px] font-bold text-white uppercase tracking-wider">Penghargaan Budaya</span>
+                            <h4 class="text-base font-bold text-white mt-1">Prestasi IPMM Bogor</h4>
+                            <p class="text-xs text-gray-300">Juara 1 Stand Kebudayaan Gebyar Nusantara</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 5 -->
+                <div class="glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openMediaModal('Duta Budaya Minang IPB', 'Promotor Resmi Stand Kebudayaan Minangkabau IPMM Bogor.', 'WhatsApp Image 2026-08-20 at 07.45.01.jpg')">
+                    <div class="relative overflow-hidden aspect-[3/4] bg-slate-900">
+                        <img src="WhatsApp Image 2026-08-20 at 07.45.01.jpg" alt="Promotor Stand Kebudayaan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="px-2.5 py-1 rounded bg-indigo-500/80 text-[10px] font-bold text-white uppercase tracking-wider">Promotor Kebudayaan</span>
+                            <h4 class="text-base font-bold text-white mt-1">Duta Budaya Minang IPB</h4>
+                            <p class="text-xs text-gray-300">Promotor Stand Kebudayaan Minangkabau</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 6 -->
+                <div class="glass-card rounded-2xl overflow-hidden border border-white/10 group cursor-pointer" onclick="openMediaModal('Talent Project Shooting', 'Pengambilan Gambar Video Layanan Public / Perusahaan.', 'WhatsApp Image 2026-08-20 at 07.45.00 (1).jpeg')">
+                    <div class="relative overflow-hidden aspect-[3/4] bg-slate-900">
+                        <img src="WhatsApp Image 2026-08-20 at 07.45.00 (1).jpeg" alt="Talent Shooting Layanan Publik" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="px-2.5 py-1 rounded bg-emerald-500/80 text-[10px] font-bold text-white uppercase tracking-wider">Creative Talent</span>
+                            <h4 class="text-base font-bold text-white mt-1">Talent Project Shooting</h4>
+                            <p class="text-xs text-gray-300">Video Layanan Publik / Perusahaan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS SECTION -->
+    <section id="achievements" class="py-20 relative bg-slate-950/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-amber-400 font-semibold text-xs uppercase tracking-widest">Penghargaan & Duta</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">Prestasi & Pencapaian</h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-amber-500 to-amber-300 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Achievement Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Winner Putera Kampus Jabar -->
+                <div class="glass-card rounded-2xl p-6 border border-amber-500/30 relative overflow-hidden group hover:border-amber-400 transition-all">
+                    <div class="absolute -right-6 -bottom-6 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/20 transition-all"></div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-2xl font-bold">
+                            🏆
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold">2025</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1">WINNER Putera Kampus Jawa Barat</h3>
+                    <p class="text-xs text-amber-200/80 mb-3 font-medium">Paguyuban Putera Puteri Kampus Jawa Barat</p>
+                    <p class="text-xs text-gray-300 leading-relaxed">Meraih Juara 1 (Winner) pada pemilihan Duta Kampus Jawa Barat 2025 yang menguji wawasan komunikasi, kepribadian, advokasi pendidikan, dan presentasi publik.</p>
+                </div>
+
+                <!-- Finalist Putera Kampus Indonesia -->
+                <div class="glass-card rounded-2xl p-6 border border-amber-500/20 relative overflow-hidden group hover:border-amber-400 transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-2xl font-bold">
+                            🎖️
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold">2025</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1">Finalist Putera Kampus Indonesia</h3>
+                    <p class="text-xs text-amber-200/80 mb-3 font-medium">Gelar Tambahan: Putera Persahabatan Indonesia 2025</p>
+                    <p class="text-xs text-gray-300 leading-relaxed">Mewakili Jawa Barat di tingkat nasional dan terpilih sebagai Duta Persahabatan berdasarkan penilaian sosial, kepemimpinan, dan kolaborasi antar finalis se-Indonesia.</p>
+                </div>
+
+                <!-- 1st Runner Up Uda Uni IPMM -->
+                <div class="glass-card rounded-2xl p-6 border border-white/10 relative overflow-hidden group hover:border-brand-accent transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-2xl font-bold">
+                            🥈
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 text-xs font-bold">2024</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1">1st Runner Up Uda Uni IPMM</h3>
+                    <p class="text-xs text-sky-300 mb-3 font-medium">Ikatan Pelajar & Mahasiswa Minang IPB</p>
+                    <p class="text-xs text-gray-300 leading-relaxed">Meraih posisi Wakil 1 Duta Budaya Minang IPB University atas kemampuan advokasi kebudayaan dan public speaking.</p>
+                </div>
+
+                <!-- Top 3 & Best Knowledge Icon of Communication -->
+                <div class="glass-card rounded-2xl p-6 border border-white/10 relative overflow-hidden group hover:border-indigo-400 transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-2xl font-bold">
+                            💡
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-bold">2022</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1">Top 3 & Best Knowledge Icon of Communication</h3>
+                    <p class="text-xs text-indigo-300 mb-3 font-medium">ICOMOTION - IPB University</p>
+                    <p class="text-xs text-gray-300 leading-relaxed">Terpilih sebagai Top 3 dan memenangkan penghargaan Best Knowledge pada ajang pemilihan ikon ambassador Prodi Komunikasi Digital IPB.</p>
+                </div>
+
+                <!-- Finalist Putra Tenun Songket Indonesia -->
+                <div class="glass-card rounded-2xl p-6 border border-white/10 relative overflow-hidden group hover:border-purple-400 transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-2xl font-bold">
+                            👘
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs font-bold">2023</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1">Finalist Putra Tenun Songket Indonesia</h3>
+                    <p class="text-xs text-purple-300 mb-3 font-medium">Tingkat Nasional - Jakarta</p>
+                    <p class="text-xs text-gray-300 leading-relaxed">Mewakili daerah dalam melestarikan warisan kain tenun songket nusantara melalui peragaan busana dan pemaparan budaya.</p>
+                </div>
+
+                <!-- News Anchor & Penulisan Artikel -->
+                <div class="glass-card rounded-2xl p-6 border border-white/10 relative overflow-hidden group hover:border-emerald-400 transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl font-bold">
+                            ✍️
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold">2024</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1">Penulis Artikel Majalah SV IPB</h3>
+                    <p class="text-xs text-emerald-300 mb-3 font-medium">Sekolah Vokasi IPB University</p>
+                    <p class="text-xs text-gray-300 leading-relaxed">Penulis terpilih untuk artikel opini, profil tokoh inspiratif, serta berita jurnalistik publikasi kampus.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ORGANIZATION & MC EXPERIENCE SECTION -->
+    <section id="organization" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Left: Leadership & Organizations -->
+                <div class="lg:col-span-7 space-y-8">
+                    <div>
+                        <span class="text-brand-accent font-semibold text-xs uppercase tracking-widest">Kepemimpinan</span>
+                        <h2 class="text-3xl font-bold text-white mt-1">Pengalaman Organisasi</h2>
+                        <div class="w-12 h-1 bg-brand-500 rounded-full mt-2"></div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Org 1: FAMILI IPB -->
+                        <div class="glass-card p-6 rounded-2xl border border-white/10">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h3 class="text-base font-bold text-white">FAMILI IPB University</h3>
+                                    <p class="text-xs text-brand-accent font-semibold">Wakil Ketua Umum (Vice Chairman)</p>
+                                </div>
+                                <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 text-gray-300 font-mono">2023 - 2024</span>
+                            </div>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                Bertindak sebagai Steering Committee program kerja tahunan, memimpin penyusunan proposal & laporan pertanggungjawaban, serta mengoordinasikan pengurus harian demi kelancaran kegiatan mahasiswa.
+                            </p>
+                        </div>
+
+                        <!-- Org 2: ICOMOTION -->
+                        <div class="glass-card p-6 rounded-2xl border border-white/10">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h3 class="text-base font-bold text-white">ICOMOTION (Icon of Communication IPB)</h3>
+                                    <p class="text-xs text-brand-accent font-semibold">Staff Program Development & Produksi Podcast</p>
+                                </div>
+                                <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 text-gray-300 font-mono">2022 - 2024</span>
+                            </div>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                Merancang program branding prodi Komunikasi Digital, bertindak sebagai tim teknis dan produksi serial Podcast Icomotion serta Mind Matters Podcast IPB.
+                            </p>
+                        </div>
+
+                        <!-- Org 3: DPM SV IPB -->
+                        <div class="glass-card p-6 rounded-2xl border border-white/10">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h3 class="text-base font-bold text-white">DPM SV IPB University</h3>
+                                    <p class="text-xs text-brand-accent font-semibold">Ketua Pelaksana Sidang Istimewa 3 & Badan Koordinasi Sosial</p>
+                                </div>
+                                <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 text-gray-300 font-mono">2022 - 2023</span>
+                            </div>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                Memimpin jalannya Sidang Istimewa DPM SV IPB, mengendalikan divisi Dekorasi & Dokumen, serta menjadi humas legislatif kampus.
+                            </p>
+                        </div>
+
+                        <!-- Org 4: SMAN 1 Suliki -->
+                        <div class="glass-card p-6 rounded-2xl border border-white/10">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h3 class="text-base font-bold text-white">MPK & PKS SMAN 1 Suliki</h3>
+                                    <p class="text-xs text-brand-accent font-semibold">Wakil Ketua MPK & Wakil Ketua PKS</p>
+                                </div>
+                                <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 text-gray-300 font-mono">2021 - 2022</span>
+                            </div>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                Mengoordinasikan kebijakan organisasi dengan OSIS, menegakkan kedisiplinan siswa, dan mengonsepkan acara Accasaki Campus Expo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Master of Ceremony & Moderator Experience List -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-amber-400 font-semibold text-xs uppercase tracking-widest">Public Speaking</span>
+                        <h2 class="text-3xl font-bold text-white mt-1">MC & Moderator</h2>
+                        <div class="w-12 h-1 bg-amber-400 rounded-full mt-2"></div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl border border-white/10 space-y-4">
+                        <div class="flex items-center gap-3 pb-3 border-b border-white/10">
+                            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-microphone-lines"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">MC Accasaki Campus Expo ACE IV</h4>
+                                <span class="text-[11px] text-gray-400">Tahun 2025</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3 pb-3 border-b border-white/10">
+                            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-comments"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Moderator Sosialisasi IPB 50 Kota</h4>
+                                <span class="text-[11px] text-gray-400">Tahun 2024</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3 pb-3 border-b border-white/10">
+                            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">MC Silaturrahmi PAPMM-IPMM</h4>
+                                <span class="text-[11px] text-gray-400">Tahun 2024</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3 pb-3 border-b border-white/10">
+                            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-champagne-glasses"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">MC Famili Gathering 60 IPB</h4>
+                                <span class="text-[11px] text-gray-400">Tahun 2024</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3 pb-3 border-b border-white/10">
+                            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">MC Ormawa Solidarity Event</h4>
+                                <span class="text-[11px] text-gray-400">Tahun 2023</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">MC Accasaki Campus Expo ACE I</h4>
+                                <span class="text-[11px] text-gray-400">Tahun 2022</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CV SECTION -->
+    <section id="cv" class="py-20 relative bg-slate-950/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                <span class="text-brand-accent font-semibold text-xs uppercase tracking-widest">Dokumen Resmi</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">Curriculum Vitae Interaktif</h2>
+                <p class="text-gray-400 text-sm">Anda dapat membaca resume lengkap di bawah ini atau mengunduh versi ringkas siap cetak.</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-brand-600 to-brand-accent mx-auto rounded-full"></div>
+            </div>
+
+            <div class="glass-card rounded-3xl p-6 sm:p-10 border border-white/10 max-w-5xl mx-auto shadow-2xl relative">
+                <!-- Action Header Bar -->
+                <div class="flex flex-wrap items-center justify-between gap-4 pb-6 mb-8 border-b border-white/10">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-file-pdf"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-bold text-white">CV Gusvandi Harki - 2026</h3>
+                            <p class="text-xs text-gray-400">Fresh Graduate Komunikasi Digital & Media IPB University</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <button onclick="window.print()" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold transition-all flex items-center gap-1.5">
+                            <i class="fa-solid fa-print"></i> Cetak / Save PDF
+                        </button>
+                        <button onclick="copyCVLink()" class="px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold transition-all flex items-center gap-1.5">
+                            <i class="fa-solid fa-share-nodes"></i> Salin Kontak CV
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CV Content Document Render -->
+                <div class="space-y-8 text-gray-200 text-sm">
+                    <!-- Header info -->
+                    <div class="text-center pb-6 border-b border-white/10 space-y-2">
+                        <h1 class="text-3xl font-extrabold text-white tracking-wide">GUSVANDI HARKI</h1>
+                        <p class="text-xs text-gray-300 flex flex-wrap justify-center gap-4">
+                            <span><i class="fa-solid fa-location-dot text-rose-400 mr-1"></i> Bogor & Jakarta, Indonesia</span>
+                            <span><i class="fa-solid fa-phone text-emerald-400 mr-1"></i> +62 822 8467 3727</span>
+                            <span><i class="fa-solid fa-envelope text-sky-400 mr-1"></i> gusvandiharki6@gmail.com</span>
+                            <span><i class="fa-brands fa-instagram text-pink-400 mr-1"></i> @gusvandiharki</span>
+                        </p>
+                    </div>
+
+                    <!-- Profile Summary -->
+                    <div class="space-y-2">
+                        <h4 class="text-xs font-bold text-brand-accent uppercase tracking-wider border-l-2 border-brand-500 pl-2">Ringkasan Profil</h4>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            Saya adalah Fresh Graduate Program Studi Komunikasi Digital dan Media di Sekolah Vokasi IPB University dengan IPK 3.40/4.00. Memiliki ketertarikan tinggi pada video editing, event management, broadcasting, content creation, dan creative writing dengan keahlian yang teruji. Berhasil meraih berbagai prestasi nasional & provinsi yang mendukung bidang komunikasi, serta memiliki kecakapan kolaborasi, kepemimpinan, dan manajemen waktu yang unggul.
+                        </p>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="space-y-3">
+                        <h4 class="text-xs font-bold text-brand-accent uppercase tracking-wider border-l-2 border-brand-500 pl-2">Pendidikan</h4>
+                        <div class="flex justify-between items-start text-xs">
+                            <div>
+                                <strong class="text-white block">IPB University - Bogor, Indonesia</strong>
+                                <span class="text-gray-300">Komunikasi Digital dan Media</span>
+                            </div>
+                            <span class="text-emerald-400 font-semibold">IPK Akhir: 3.40 / 4.00</span>
+                        </div>
+                    </div>
+
+                    <!-- Work Experience Summary -->
+                    <div class="space-y-4">
+                        <h4 class="text-xs font-bold text-brand-accent uppercase tracking-wider border-l-2 border-brand-500 pl-2">Pengalaman Kerja & Magang</h4>
+                        
+                        <div class="space-y-1 text-xs">
+                            <div class="flex justify-between font-semibold text-white">
+                                <span>PT. Indonesia Comnets Plus (PLN Icon Plus) - Jakarta</span>
+                                <span class="text-gray-400">Agu 2025 - Des 2025</span>
+                            </div>
+                            <p class="text-brand-accent font-medium">Komunikasi Korporat & TJSL Intern</p>
+                            <p class="text-gray-300 text-[11px]">Membuat konten visual & Reels Instagram, monitoring berita nasional, serta merancang konsep video TJSL untuk CID Award 2025.</p>
+                        </div>
+
+                        <div class="space-y-1 text-xs">
+                            <div class="flex justify-between font-semibold text-white">
+                                <span>B-Universe (Beritasatu) - Jakarta</span>
+                                <span class="text-gray-400">Feb 2025 - Jun 2025</span>
+                            </div>
+                            <p class="text-brand-accent font-medium">Social Media Intern</p>
+                            <p class="text-gray-300 text-[11px]">Riset naskah, pengambilan video liputan, produksi Feeds & Reels BTV, serta mengelola YouTube Shorts Beritasatu.</p>
+                        </div>
+
+                        <div class="space-y-1 text-xs">
+                            <div class="flex justify-between font-semibold text-white">
+                                <span>Freelance Creative Talent & Photographer</span>
+                                <span class="text-gray-400">Jan 2024 - Jan 2025</span>
+                            </div>
+                            <p class="text-brand-accent font-medium">Peruri.id, Riyena Beauty Clinic, Art Mission</p>
+                            <p class="text-gray-300 text-[11px]">Talent shooting iklan Peruri, promosi endorsement klinik kecantikan, serta fotografer kegiatan outdoor.</p>
+                        </div>
+                    </div>
+
+                    <!-- Key Achievements List -->
+                    <div class="space-y-2">
+                        <h4 class="text-xs font-bold text-brand-accent uppercase tracking-wider border-l-2 border-brand-500 pl-2">Prestasi & Penghargaan</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-gray-300">
+                            <div>• Winner Putera Kampus Jawa Barat (2025)</div>
+                            <div>• Finalist Putera Kampus Indonesia / Persahabatan (2025)</div>
+                            <div>• 1st Runner Up Uda Uni IPMM (2024)</div>
+                            <div>• Top 3 & Best Knowledge Icon of Communication IPB (2022)</div>
+                            <div>• Penulis Artikel Majalah SV IPB (2024)</div>
+                            <div>• Finalist Putra Tenun Songket Indonesia (2023)</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-white/10 pt-16 pb-12 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+                
+                <!-- Brand Summary Column -->
+                <div class="md:col-span-5 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-brand-accent flex items-center justify-center font-extrabold text-white text-lg shadow-lg">
+                            GH
+                        </div>
+                        <span class="font-bold text-xl text-white">Gusvandi Harki</span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+                        Fresh Graduate Komunikasi Digital dan Media IPB University. Siap berkontribusi profesional dalam Video Editing, Event Management, Public Relations, Content Production, dan Media Broadcasting.
+                    </p>
+                    <div class="flex items-center gap-3 text-gray-400">
+                        <a href="https://instagram.com/gusvandiharki" target="_blank" class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center hover:text-pink-400 hover:bg-white/10 transition-all"><i class="fa-brands fa-instagram text-sm"></i></a>
+                        <a href="https://linkedin.com/in/gusvandiharki" target="_blank" class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center hover:text-sky-400 hover:bg-white/10 transition-all"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+                        <a href="mailto:gusvandiharki6@gmail.com" class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center hover:text-rose-400 hover:bg-white/10 transition-all"><i class="fa-solid fa-envelope text-sm"></i></a>
+                        <a href="https://wa.me/6282284673727" target="_blank" class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center hover:text-emerald-400 hover:bg-white/10 transition-all"><i class="fa-brands fa-whatsapp text-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- Navigation Quick Links -->
+                <div class="md:col-span-3 space-y-3">
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider">Navigasi Cepat</h4>
+                    <ul class="space-y-2 text-xs text-gray-400">
+                        <li><a href="#about" class="hover:text-brand-accent transition-colors">Tentang Saya</a></li>
+                        <li><a href="#experience" class="hover:text-brand-accent transition-colors">Pengalaman Kerja</a></li>
+                        <li><a href="#portfolio" class="hover:text-brand-accent transition-colors">Portofolio Editing</a></li>
+                        <li><a href="#gallery" class="hover:text-brand-accent transition-colors">Galeri Foto Kegiatan</a></li>
+                        <li><a href="#achievements" class="hover:text-brand-accent transition-colors">Prestasi & Penghargaan</a></li>
+                        <li><a href="#cv" class="hover:text-brand-accent transition-colors">Dokumen Resume (CV)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Direct Contact Information -->
+                <div class="md:col-span-4 space-y-3">
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider">Kontak Langsung</h4>
+                    <div class="space-y-2 text-xs text-gray-300">
+                        <p class="flex items-center gap-2"><i class="fa-solid fa-envelope text-rose-400"></i> gusvandiharki6@gmail.com</p>
+                        <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-emerald-400"></i> +62 822 8467 3727</p>
+                        <p class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-sky-400"></i> Bogor & Jakarta, Indonesia</p>
+                    </div>
+                    <button onclick="openContactModal()" class="mt-2 w-full py-2.5 rounded-xl bg-gradient-to-r from-brand-600 to-brand-accent text-white text-xs font-bold shadow-lg shadow-brand-500/20 hover:opacity-90 transition-all">
+                        Kirim Pesan
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="pt-8 text-center text-xs text-gray-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>&copy; 2026 Gusvandi Harki. All rights reserved.</p>
+                <p>Designed for Communication & Digital Media Showcase</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal Form -->
+    <div id="contact-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden">
+        <div class="glass-panel rounded-3xl p-6 sm:p-8 max-w-md w-full border border-white/10 shadow-2xl relative animate-float" style="animation-duration: 0.3s;">
+            <button onclick="closeContactModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white p-2">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="space-y-2 mb-6">
+                <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-paper-plane text-brand-accent"></i> Hubungi Gusvandi
+                </h3>
+                <p class="text-xs text-gray-300">Kirimkan pesan langsung atau pertanyaan seputar kerja sama project & event.</p>
+            </div>
+
+            <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4 text-xs">
+                <div>
+                    <label class="block text-gray-300 font-medium mb-1">Nama Lengkap</label>
+                    <input type="text" required placeholder="Masukkan nama Anda" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-white focus:outline-none focus:border-brand-500">
+                </div>
+                <div>
+                    <label class="block text-gray-300 font-medium mb-1">Email / Kontak WhatsApp</label>
+                    <input type="text" required placeholder="contoh: email@domain.com / 0812xxx" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-white focus:outline-none focus:border-brand-500">
+                </div>
+                <div>
+                    <label class="block text-gray-300 font-medium mb-1">Subjek / Topik Kerja Sama</label>
+                    <select class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-white focus:outline-none focus:border-brand-500">
+                        <option>Video Editing & Content Creation</option>
+                        <option>MC & Event Moderator</option>
+                        <option>Event Management & Directing</option>
+                        <option>Creative Talent / Endorsement</option>
+                        <option>Lainnya</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-gray-300 font-medium mb-1">Pesan</label>
+                    <textarea rows="3" required placeholder="Tuliskan pesan Anda di sini..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-white focus:outline-none focus:border-brand-500"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-brand-600 to-brand-accent text-white font-bold hover:opacity-90 transition-all shadow-lg shadow-brand-500/20">
+                    Kirim Pesan
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Media Detail Modal Preview -->
+    <div id="media-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden">
+        <div class="glass-panel rounded-3xl p-6 max-w-2xl w-full border border-white/10 shadow-2xl relative space-y-4">
+            <button onclick="closeMediaModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2 z-10">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="rounded-2xl overflow-hidden aspect-[3/4] sm:aspect-video bg-slate-950 flex items-center justify-center">
+                <img id="modal-img" src="" alt="Detail Media" class="w-full h-full object-contain">
+            </div>
+
+            <div class="space-y-2">
+                <h3 id="modal-title" class="text-lg font-bold text-white">Judul Kegiatan</h3>
+                <p id="modal-desc" class="text-xs text-gray-300 leading-relaxed">Deskripsi lengkap foto kegiatan akan muncul di sini.</p>
+            </div>
+
+            <div class="pt-3 flex justify-end">
+                <button onclick="closeMediaModal()" class="px-5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold">
+                    Tutup Preview
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 glass-panel px-5 py-3 rounded-2xl border border-brand-500 text-white text-xs font-semibold shadow-2xl transition-all duration-300 transform translate-y-20 opacity-0 flex items-center gap-2">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-sm"></i>
+        <span id="toast-message">Pesan berhasil terkirim!</span>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Mobile Navigation Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile drawer when clicking nav links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Portfolio Category Filter Logic
+        function filterPortfolio(category) {
+            const cards = document.querySelectorAll('.portfolio-card');
+            const buttons = document.querySelectorAll('.tab-btn');
+
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-category') === category) {
+                    btn.classList.add('bg-brand-600', 'text-white', 'border-brand-500');
+                    btn.classList.remove('text-gray-300');
+                } else {
+                    btn.classList.remove('bg-brand-600', 'text-white', 'border-brand-500');
+                    btn.classList.add('text-gray-300');
+                }
+            });
+
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (category === 'all' || cardCategory === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Contact Modal Logic
+        function openContactModal() {
+            document.getElementById('contact-modal').classList.remove('hidden');
+        }
+
+        function closeContactModal() {
+            document.getElementById('contact-modal').classList.add('hidden');
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            closeContactModal();
+            showToast('Pesan Anda telah berhasil dikirim ke Gusvandi Harki!');
+            e.target.reset();
+        }
+
+        // Media Detail Modal Logic
+        function openMediaModal(title, description, imgSrc) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-desc').innerText = description;
+            document.getElementById('modal-img').src = imgSrc;
+            document.getElementById('media-modal').classList.remove('hidden');
+        }
+
+        function closeMediaModal() {
+            document.getElementById('media-modal').classList.add('hidden');
+        }
+
+        // Toast Helper
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').innerText = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3500);
+        }
+
+        // Copy CV Text function
+        function copyCVLink() {
+            const tempText = `CV Gusvandi Harki - Komunikasi Digital & Media IPB University\nEmail: gusvandiharki6@gmail.com | Phone: +62 822 8467 3727 | Instagram: @gusvandiharki`;
+            
+            const textarea = document.createElement('textarea');
+            textarea.value = tempText;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            showToast('Informasi Kontak CV telah disalin ke clipboard!');
+        }
+
+        // Header Background Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-1');
+            } else {
+                header.classList.remove('py-1');
+            }
+        });
+    </script>
+</body>
+</html>
